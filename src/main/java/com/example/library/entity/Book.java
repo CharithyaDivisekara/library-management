@@ -1,23 +1,23 @@
 package com.example.library.entity;
 
-import jakarta.persistence.Entity;// Brings in tools to connect this class to a database table
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Column;
+import jakarta.persistence.Entity;// Brings in tools to connect this class to a DB table
+import jakarta.persistence.Id; //Says which field is the PK of the table
+import jakarta.persistence.GeneratedValue; //Lets the database automatically generate the ID value
+import jakarta.persistence.GenerationType; //Allows choosing how the ID is generated (auto-increment)
+import jakarta.persistence.Column;//Used to set extra details for a column (name or size)
 import jakarta.validation.constraints.NotBlank;// Adds checks to make sure some fields are not empty
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import lombok.Data; //Automatically adds common methods like getters, setters, toString
+import lombok.NoArgsConstructor;//Creates a constructor with no input
+import lombok.AllArgsConstructor;// Creates a constructor with all fields inputs.
+import lombok.Builder;//build obj. step by steps
+import com.example.library.entity.Book;
 
-
-@Entity // Says this class will be saved in the database as a table.
+@Entity //marks this clz to be saved as a table in DB
 
 @Data // Automatically creates getters, setters, and other common methods.
 @NoArgsConstructor // Creates a constructor that needs no inputs.
 @AllArgsConstructor // Creates a constructor that uses all fields as inputs.
-@Builder // Lets you build objects in a flexible way.
+@Builder //build obj. step by steps
 public class Book {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
