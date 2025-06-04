@@ -43,6 +43,6 @@ public class BookController {
 
     @GetMapping("/search")
     public List<Book> searchBook(@RequestParam String title, @RequestParam String author) {
-        return bookService.searchBook(title, author);
+        return bookService.searchBooks(title, author);
     }
 }
